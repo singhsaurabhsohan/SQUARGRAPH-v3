@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websites & Digital Experiences – SQUARGRAPH™</title>
+  <meta name="description" content="High-performance websites and digital experiences designed and built by SQUARGRAPH™ Studios. Custom-scoped per project." />
+  <link rel="canonical" href="https://squargraph.com/websites-digital-experiences" />
+  <meta property="og:title" content="Websites & Digital Experiences – SQUARGRAPH™" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://squargraph.com/websites-digital-experiences" />
+  <meta property="og:description" content="High-performance websites and digital experiences designed and built by SQUARGRAPH™ Studios. Custom-scoped per project." />
+  <meta property="og:image" content="https://squargraph.com/squargraph-brand-image.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Websites & Digital Experiences – SQUARGRAPH™" />
+  <meta name="twitter:description" content="High-performance websites and digital experiences designed and built by SQUARGRAPH™ Studios. Custom-scoped per project." />
+  <meta name="twitter:image" content="https://squargraph.com/squargraph-brand-image.webp" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- GTM Head -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KBN4JXZD');</script>
+
+  <!-- Fonts -->
+  <link rel="preload" href="/fonts/Satoshi-Regular.woff" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/Satoshi-Medium.woff" as="font" type="font/woff" crossorigin />
+  <link rel="preload" href="/fonts/Satoshi-Bold.woff" as="font" type="font/woff" crossorigin />
+
+  <!-- intl-tel-input -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/css/intlTelInput.css" media="print" onload="this.media='all'" />
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/intlTelInput.min.js" defer></script>
+  <script>
+  var _rcLoaded = false;
+  function _loadRC() { if(_rcLoaded) return; _rcLoaded=true; var s=document.createElement('script'); s.src='https://www.google.com/recaptcha/api.js'; s.async=true; s.defer=true; document.head.appendChild(s); }
+  var _rcObs = new IntersectionObserver(function(entries){ if(entries[0].isIntersecting){ _loadRC(); _rcObs.disconnect(); } },{ rootMargin:'200px' });
+  </script>
+
+  <style>
+    :root {
+      --offwhite: #FAFAF9; --warmgray: #F5F5F3; --coolgray: #F0EFED;
+      --bordergray: #E5E3DF; --textmuted: #2A2623; --textsecondary: #3D3935;
+      --textprimary: #1A1714; --accent: #6B5DB8; --accentmuted: #7B6FB8;
+      --accentlight: #EEECf7;
+      --surface: #F5F5F3; --border: #E5E3DF; --radius-pill: 999px;
+      --radius-card: 16px; --transition: 0.22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--textprimary);
+      background: #fff;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(107,93,184,.15); }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      transition: background .4s, border-color .4s, backdrop-filter .4s;
+    }
+    nav.scrolled {
+      background: rgba(250,250,249,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--bordergray);
+    }
+    .nav-inner {
+      max-width: 1440px; margin: 0 auto;
+      padding: 0 clamp(24px,4vw,64px);
+      display: flex; align-items: center; justify-content: space-between;
+      height: 84px;
+    }
+    .nav-logo { font-size: 18px; font-weight: 600; letter-spacing: -0.03em; display:flex; align-items:center; }
+    .nav-logo sup { font-size: 9px; color: var(--accent); vertical-align: super; margin-left:1px; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--textsecondary); transition: color .2s; }
+    .nav-links a:hover { color: var(--textprimary); }
+    .nav-cta {
+      font-size: 13px; font-weight: 500; color: var(--textprimary);
+      border: 1px solid var(--bordergray); border-radius: 999px; padding: 9px 22px;
+      transition: background .25s, color .25s, border-color .25s;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; border-color: var(--accent); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* Hamburger */
+    .hamburger {
+      display:none; flex-direction:column; align-items:center; justify-content:center; width:44px; height:44px; background:none; border:none; cursor:pointer; padding:0; position:relative; z-index:102;
+    }
+    .pill-menu { display:flex; flex-direction:column; align-items:center; gap:5px; }
+    .pill-line { width:28px; height:1.5px; background:var(--textprimary); border-radius:999px; transition:transform .35s cubic-bezier(.77,0,.18,1),opacity .3s; }
+    .pill-body { width:28px; height:13px; border:1.5px solid var(--textprimary); border-radius:999px; background:transparent; transition:transform .35s cubic-bezier(.77,0,.18,1),opacity .3s; }
+    .hamburger.open .pill-line { transform:translateY(9px) rotate(45deg); }
+    .hamburger.open .pill-body { opacity:0; transform:scaleX(0); }
+    @media (max-width:768px) { .hamburger { display:flex; } }
+    @media (min-width:769px) { .hamburger { display:none !important; } }
+
+    /* Mobile menu */
+    #mob-menu {
+      display:flex; position:fixed; inset:0; z-index:101; background:#fff;
+      flex-direction:column; justify-content:center;
+      padding:clamp(32px,8vw,64px); padding-top:100px;
+      opacity:0; pointer-events:none; transition:opacity .3s;
+    }
+    #mob-menu.open { opacity:1; pointer-events:all; }
+    #mob-menu a:not(.mob-contact) { display:block; font-size:clamp(22px,6vw,32px); font-weight:500; letter-spacing:-0.03em; color:var(--textprimary); padding:16px 0; border-bottom:1px solid var(--bordergray); transition:color .2s; text-decoration:none; }
+    #mob-menu a:hover { color:var(--accent); }
+    #mob-menu a:active { color: var(--accent); }
+    #mob-menu a.finger-active { color: var(--accent); }
+    #mob-menu .mob-contact { margin-top: 32px; font-size: 13px; color: var(--textmuted); border-bottom: none; display: block; text-decoration: none; }
+
+    /* ── HERO ── */
+    .page-hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px clamp(24px,5vw,80px) 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    }
+    .hero-bg svg { width:100%; height:100%; opacity:.035; }
+    .hero-bg-blob {
+      position: absolute; border-radius: 50%; filter: blur(80px); opacity: .07;
+    }
+    .hero-bg-blob-1 { width:60vw; height:60vw; top:-30vw; right:-20vw; background:var(--accent); }
+    .hero-bg-blob-2 { width:40vw; height:40vw; bottom:-20vw; left:-15vw; background:var(--accent); }
+    .hero-inner {
+      max-width: 1440px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(60px,8vw,120px); align-items: center;
+      position: relative; z-index: 1;
+    }
+    @media (max-width:900px) { .hero-inner { grid-template-columns:1fr; gap:48px; } }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .hero-eyebrow-dot { width:5px; height:5px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+    .hero-h1 {
+      font-weight: 500;
+      font-size: clamp(2.4rem,5.5vw,5rem);
+      line-height: 1.05; letter-spacing: -0.04em;
+      color: var(--textprimary); margin-bottom: 20px;
+    }
+    .hero-h1 sup { font-size: 0.45em; color: var(--accent); vertical-align: super; letter-spacing: 0; }
+    .hero-price-pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--accentlight); border: 1px solid rgba(107,93,184,.2);
+      border-radius: 999px; padding: 8px 18px;
+      font-size: 14px; font-weight: 600; color: var(--accent);
+      margin-bottom: 28px; letter-spacing: -0.01em;
+    }
+    .hero-sub {
+      font-size: clamp(15px,1.5vw,17px); color: var(--textsecondary);
+      line-height: 1.75; max-width: 46ch; margin-bottom: 32px;
+    }
+    .hero-proof-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+    .hero-chip {
+      font-size: 12px; font-weight: 500; color: var(--textsecondary);
+      background: var(--warmgray); border: 1px solid var(--bordergray);
+      border-radius: 999px; padding: 5px 14px;
+    }
+
+    /* Form card */
+    .form-card {
+      background: #fff; border: 1px solid var(--bordergray);
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(26,23,20,.07), 0 1px 4px rgba(26,23,20,.04);
+      padding: clamp(28px,4vw,48px);
+    }
+    .form-card-title {
+      font-size: 15px; font-weight: 600; letter-spacing: -0.02em;
+      color: var(--textprimary); margin-bottom: 6px;
+    }
+    .form-card-sub { font-size: 13px; color: var(--textsecondary); margin-bottom: 28px; }
+
+    /* Form elements */
+    .field { display:flex; flex-direction:column; gap:6px; }
+    .form-label {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--textmuted);
+    }
+    .form-input {
+      width: 100%; background: var(--warmgray); border: 1px solid var(--bordergray);
+      color: var(--textprimary); padding: 12px 18px; min-height: 48px;
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      border-radius: 999px; outline: none; transition: border-color .25s, box-shadow .25s;
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder { color: #9A9590; }
+    .form-input:focus { border-color: var(--accentmuted); box-shadow: 0 0 0 3px rgba(107,93,184,.1); }
+    .form-input.has-error { border-color: #EF4444; }
+    textarea.form-input { border-radius: 14px; resize: vertical; min-height: 100px; }
+    select.form-input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath fill='none' stroke='%235A5550' stroke-width='1.5' d='M1 1l6 5 6-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 18px center; padding-right: 42px;
+      cursor: pointer;
+    }
+    select.form-input option { background:#fff; }
+    .field-error { font-size: 11px; color: #EF4444; display:none; padding-left:4px; }
+    .field-error.show { display:block; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:540px) { .form-row { grid-template-columns:1fr; } }
+    .form-stack { display:flex; flex-direction:column; gap:14px; }
+
+    /* intl-tel-input overrides */
+    .iti {
+      display:block; width:100%; position:relative;
+      border-radius:999px; background:var(--warmgray); border:1px solid var(--bordergray);
+      overflow:visible; transition:border-color .25s, box-shadow .25s;
+    }
+    .iti:focus-within { border-color:var(--accentmuted); box-shadow:0 0 0 3px rgba(107,93,184,.1); }
+    .iti__selected-flag { height:48px !important; background:transparent !important; border:none !important; padding:0 10px 0 14px; display:flex; align-items:center; }
+    .iti input#web-phone { border:none !important; background:transparent !important; height:48px; width:100% !important; padding-left:86px !important; font-family:'Satoshi',sans-serif; font-size:14px; color:var(--textprimary); outline:none; box-shadow:none !important; }
+    .iti input#web-phone:-webkit-autofill,
+    .iti input#web-phone:-webkit-autofill:hover,
+    .iti input#web-phone:-webkit-autofill:focus,
+    .iti input#web-phone:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px var(--warmgray) inset !important;
+      -webkit-border-radius: 0 999px 999px 0 !important;
+      border-radius: 0 999px 999px 0 !important;
+      -webkit-text-fill-color: var(--textprimary) !important;
+    }
+    .iti { overflow: hidden; }
+    .iti__country-list { border-radius:14px !important; border:1px solid var(--bordergray) !important; box-shadow:0 12px 40px rgba(0,0,0,.12) !important; font-family:'Satoshi',sans-serif !important; font-size:13px !important; max-height:260px !important; overflow-y:auto !important; background:#fff !important; padding:8px 0 !important; position:fixed !important; z-index:9999; }
+    .iti__country { padding:9px 16px !important; }
+    .iti__country.iti__highlight { background:var(--accentlight) !important; }
+    .iti__flag { background-image:url("https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/img/flags.png") !important; }
+    @media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) { .iti__flag { background-image:url("https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/img/flags@2x.png") !important; } }
+
+    /* Consent */
+    .consent-row { display:flex; align-items:flex-start; gap:10px; }
+    .consent-row input[type=checkbox] { flex-shrink:0; width:18px; height:18px; margin-top:2px; accent-color:var(--accent); cursor:pointer; }
+    .consent-row label { font-size:12px; color:var(--textsecondary); line-height:1.6; cursor:pointer; }
+    .consent-row a { color:var(--accent); border-bottom:1px solid var(--accentmuted); }
+
+    /* Submit */
+    .submit-btn {
+      width:100%; background:var(--textprimary); color:#fff; border:none;
+      border-radius:999px; padding:15px 24px;
+      font-family:'Satoshi',sans-serif; font-size:14px; font-weight:500;
+      letter-spacing:-0.01em; cursor:pointer;
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      transition:background .25s, transform .2s;
+    }
+    .submit-btn:hover:not(:disabled) { background:var(--accent); transform:translateY(-1px); }
+    .submit-btn:disabled { opacity:.65; cursor:not-allowed; }
+    .spinner { display:inline-block; width:16px; height:16px; border:2px solid rgba(255,255,255,.3); border-radius:50%; border-top-color:#fff; animation:spin .6s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* ── TRUST STRIP ── */
+    .trust-section {
+      padding: clamp(60px,8vw,100px) clamp(24px,4vw,64px);
+      background: var(--warmgray);
+    }
+    .trust-inner { max-width:1440px; margin:0 auto; }
+    .trust-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    }
+    @media (max-width:768px) { .trust-grid { grid-template-columns:1fr; } }
+    .trust-card {
+      background:#fff; border-radius:16px; padding:32px 28px;
+      box-shadow:0 2px 12px rgba(26,23,20,.06);
+    }
+    .trust-num { font-size:36px; font-weight:500; letter-spacing:-0.03em; color:var(--accent); margin-bottom:6px; }
+    .trust-label { font-size:14px; font-weight:500; color:var(--textprimary); margin-bottom:6px; }
+    .trust-desc { font-size:13px; color:var(--textsecondary); line-height:1.7; }
+
+    /* ── WHAT YOU GET ── */
+    .wyg-section { padding: clamp(60px,8vw,100px) clamp(24px,4vw,64px); }
+    .wyg-inner { max-width:1440px; margin:0 auto; }
+    .wyg-header { margin-bottom:clamp(40px,6vw,64px); }
+    .section-eyebrow { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; display:block; }
+    .section-h2 { font-size:clamp(24px,3vw,40px); font-weight:500; letter-spacing:-0.03em; color:var(--textprimary); }
+    .deliverables-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    @media (max-width:640px) { .deliverables-grid { grid-template-columns:1fr; } }
+    .deliverable-card {
+      background:var(--warmgray); border-radius:14px; padding:28px 24px;
+      display:flex; align-items:flex-start; gap:16px;
+    }
+    .deliverable-icon {
+      width:40px; height:40px; border-radius:10px; background:var(--accentlight);
+      border:1px solid rgba(107,93,184,.2); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .deliverable-name { font-size:15px; font-weight:500; color:var(--textprimary); margin-bottom:4px; }
+    .deliverable-desc { font-size:13px; color:var(--textsecondary); line-height:1.65; }
+
+    /* ── FOOTER ── */
+    .site-footer { border-top:1px solid var(--bordergray); padding:40px clamp(24px,4vw,64px); }
+    .footer-inner {
+      max-width:1440px; margin:0 auto;
+      display:grid; grid-template-columns:1.8fr 1fr 1fr; gap:48px; padding-bottom:48px;
+    }
+    @media (max-width:900px) { .footer-inner { grid-template-columns:1fr 1fr; gap:36px; } }
+    @media (max-width:540px) { .footer-inner { grid-template-columns:1fr; gap:28px; padding-bottom:32px; } }
+    @media (max-width:768px) { .site-footer { padding-bottom:100px; } }
+    .footer-logo { display:flex; align-items:center; line-height:1; font-size:20px; font-weight:600; letter-spacing:-0.03em; color:var(--textprimary); margin-bottom:12px; }
+    .footer-logo sup { font-size:9px; color:var(--accent); vertical-align:super; }
+    .footer-tagline { font-size:15px; color:var(--textsecondary); line-height:1.7; max-width:24ch; margin-bottom:20px; }
+    .footer-philosophy { font-family:'Satoshi', sans-serif; font-weight:500; font-size:20px; line-height:1.4; letter-spacing:-0.02em; color:var(--textprimary); max-width:18ch; margin-bottom:28px; }
+    .social-links { display:flex; gap:8px; flex-wrap:wrap; }
+    .social-link { width:44px; height:44px; border:none; border-radius:50%; background:var(--warmgray); display:inline-flex; align-items:center; justify-content:center; color:var(--textsecondary); transition:background .2s, color .2s; }
+    .social-link:hover { background:var(--accentlight); color:var(--accent); }
+    .social-link[aria-label="FB / Facebook"] { color: #1877F2; }
+    .social-link[aria-label="Instagram"] { color: #E1306C; }
+    .social-link[aria-label="LinkedIn"] { color: #0A66C2; }
+    .social-link[aria-label="X / Twitter"] { color: #000000; }
+    .social-link[aria-label="YT / YouTube"] { color: #FF0000; }
+    .footer-col-label { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; display:block; }
+    .footer-link { display:block; margin-bottom:12px; font-size:13px; color:var(--textsecondary); transition:color .2s; }
+    .footer-link:hover { color:var(--textprimary); }
+    .footer-bar {
+      max-width:1440px; margin:0 auto; border-top:1px solid var(--bordergray);
+      padding-top:32px; display:flex; justify-content:space-between;
+      align-items:flex-start; flex-wrap:wrap; gap:10px;
+    }
+    .footer-bar p { font-size:12px; color:var(--textmuted); }
+
+    /* ── SUCCESS OVERLAY ── */
+    #payment-success-overlay {
+      display:none; position:fixed; inset:0; z-index:99999;
+      background:rgba(26,23,20,.97); overflow-y:auto;
+      padding:60px 5vw; align-items:center; justify-content:center;
+    }
+    .success-inner { max-width:620px; margin:0 auto; text-align:center; }
+    .success-check {
+      width:72px; height:72px; border-radius:50%;
+      background:rgba(31,173,78,.12); border:1px solid rgba(31,173,78,.3);
+      display:flex; align-items:center; justify-content:center; margin:0 auto 32px;
+    }
+    .success-eyebrow { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accentmuted); margin-bottom:14px; }
+    .success-h2 { font-weight:500; font-size:clamp(28px,5vw,50px); letter-spacing:-0.03em; color:#F5F3F0; line-height:1.05; margin-bottom:18px; }
+    .success-sub { font-size:15px; color:rgba(245,243,240,.55); line-height:1.75; margin-bottom:12px; max-width:46ch; margin-left:auto; margin-right:auto; }
+    .success-note { font-size:12px; color:rgba(245,243,240,.3); line-height:1.7; margin-bottom:44px; max-width:46ch; margin-left:auto; margin-right:auto; }
+    .success-steps-card {
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+      padding:32px; text-align:left; margin-bottom:32px; border-radius:14px;
+    }
+    .success-steps-label { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accentmuted); margin-bottom:22px; }
+    .success-steps { display:flex; flex-direction:column; gap:18px; }
+    .success-step { display:flex; align-items:flex-start; gap:14px; }
+    .step-num {
+      width:28px; height:28px; border-radius:50%;
+      background:rgba(139,126,200,.15); border:1px solid rgba(139,126,200,.3);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; font-size:11px; font-weight:600; color:var(--accentmuted);
+    }
+    .step-title { font-size:14px; font-weight:500; color:#F5F3F0; margin-bottom:3px; }
+    .step-desc { font-size:13px; color:rgba(245,243,240,.45); line-height:1.6; }
+    #success-payment-id { font-size:12px; color:rgba(245,243,240,.25); margin-bottom:28px; }
+    .success-actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .btn-wa {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#1fad4e; color:#fff; border:none; border-radius:999px;
+      padding:13px 24px; font-size:13px; font-weight:500; cursor:pointer; text-decoration:none;
+    }
+    .btn-close-overlay {
+      display:inline-flex; align-items:center;
+      background:transparent; color:rgba(245,243,240,.4);
+      border:1px solid rgba(255,255,255,.1); border-radius:999px;
+      padding:12px 24px; font-size:13px; font-weight:500; cursor:pointer;
+    }
+
+    /* Animations */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { animation:fadeUp .8s both; }
+    .fade-up.d1 { animation-delay:.15s; }
+    .fade-up.d2 { animation-delay:.3s; }
+    .fade-up.d3 { animation-delay:.45s; }
+
+    .scroll-reveal { opacity:0; transform:translateY(24px); transition:opacity .8s,transform .8s cubic-bezier(.25,.1,.25,1); }
+    .scroll-reveal.visible { opacity:1; transform:none; }
+
+    @media (prefers-reduced-motion:reduce) {
+      *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+    }
+    .footer-philosophy { font-family:'Satoshi', sans-serif; font-weight:500; font-size:20px; line-height:1.4; letter-spacing:-0.02em; color:var(--textprimary); max-width:18ch; margin-bottom:28px; }
+  </style>
+</head>
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBN4JXZD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ── NAV ── -->
+<nav aria-label="Main navigation" id="nav">
+<div class="nav-inner">
+<a aria-label="SQUARGRAPH Studios" class="nav-logo" href="/">
+<img alt="SQUARGRAPH Studios" decoding="sync" fetchpriority="high" height="28" src="/logo.webp" style="height:28px;width:auto;" width="120"/>
+</a>
+<div class="nav-links">
+<a href="/#work">Work</a>
+<a href="/#Engagements">Engagements</a>
+<a href="/#capabilities">Capabilities</a>
+<a href="/blog">Thinking</a>
+<a href="/#studio">Studio</a>
+      <a href="/#contact" class="nav-cta">Let's Talk</a>
+    </div>
+    <button class="hamburger" id="mob-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <div class="pill-menu"><div class="pill-line"></div><div class="pill-body"></div></div>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mob-menu" role="dialog" aria-modal="true" inert>
+  <a href="/" onclick="closeMob()">Home</a>
+  <a href="/#work" onclick="closeMob()">Work</a>
+  <a href="/#Engagements" onclick="closeMob()">Engagements</a>
+  <a href="/#capabilities" onclick="closeMob()">Capabilities</a>
+  <a href="/blog" onclick="closeMob()">Thinking</a>
+  <a href="/#studio" onclick="closeMob()">Studio</a>
+  <a href="/#contact" onclick="closeMob()">Let's Talk</a>
+  <a href="mailto:hello@squargraph.com" class="mob-contact">hello@squargraph.com</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="page-hero">
+  <div class="hero-bg">
+    <div class="hero-bg-blob hero-bg-blob-1"></div>
+    <div class="hero-bg-blob hero-bg-blob-2"></div>
+    <svg xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M 48 0 L 0 0 0 48" fill="none" stroke="#1A1714" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>
+  </div>
+  <div class="hero-inner">
+    <!-- Left: copy -->
+    <div class="fade-up">
+      <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>Digital</div>
+      <h1 class="hero-h1">Websites &amp;<br/>Digital Experiences</h1>
+      <div class="hero-price-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Custom scope · Delivered in 4–6 weeks
+      </div>
+      <p class="hero-sub">High-performance websites and digital experiences built for brands that take their market position seriously. One brief, one team, no handoffs.</p>
+      <div class="hero-proof-chips">
+        <span class="hero-chip">Strategy-led design</span>
+        <span class="hero-chip">Custom development</span>
+        <span class="hero-chip">Founder-reviewed</span>
+        <span class="hero-chip">Scoped per project</span>
+      </div>
+    </div>
+
+    <!-- Right: form -->
+    <div class="fade-up d2">
+      <div class="form-card" id="form-card">
+        <div class="form-card-title">Submit your project brief</div>
+        <div class="form-card-sub">Tell us what you need. We'll respond within 48 hours with a proposed scope.</div>
+        <form id="web-form" novalidate>
+          <div class="form-stack">
+            <div class="field">
+              <label class="form-label" for="d-name">Name</label>
+              <input type="text" id="w-name" name="name" required placeholder="Full name" class="form-input" autocomplete="name" />
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label class="form-label">WhatsApp / Phone</label>
+              <input type="tel" id="web-phone" name="phone" required placeholder="98765 43210" autocomplete="tel" />
+              <span class="field-error" id="web-phone-err">Please enter a valid phone number.</span>
+            </div>
+            <div class="field">
+              <label class="form-label" for="d-email">Work Email</label>
+              <input type="email" id="w-email" name="email" required placeholder="name@company.com" class="form-input" autocomplete="email" />
+              <span class="field-error">Please enter a valid email.</span>
+            </div>
+            <div class="field">
+              <label class="form-label" for="d-company">Brand / Company</label>
+              <input type="text" id="w-company" name="company" required placeholder="Your brand name" class="form-input" autocomplete="organization" />
+              <span class="field-error">Please enter your brand name.</span>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label class="form-label" for="discovery-country">Country</label>
+                <select id="web-country" name="country" class="form-input" autocomplete="off">
+                  <option value="" disabled selected>Select…</option>
+                  <option value="India">🇮🇳 India</option>
+                  <option value="UAE">🇦🇪 UAE</option>
+                  <option value="USA">🇺🇸 USA</option>
+                  <option value="UK">🇬🇧 UK</option>
+                  <option value="Singapore">🇸🇬 Singapore</option>
+                  <option value="Australia">🇦🇺 Australia</option>
+                  <option value="Canada">🇨🇦 Canada</option>
+                  <option value="Germany">🇩🇪 Germany</option>
+                  <option value="France">🇫🇷 France</option>
+                  <option value="Japan">🇯🇵 Japan</option>
+                  <option value="Other">🌍 Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="form-label" for="discovery-city">City</label>
+                <select id="web-city" name="city" class="form-input" style="display:none;"></select>
+                <input type="text" id="web-city-text" name="city_text" placeholder="Enter city" class="form-input" autocomplete="address-level2" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="form-label" for="w-challenge">What do you need built, and why now?</label>
+              <textarea id="w-challenge" name="challenge" required placeholder="Describe your project — what you need, who it's for, any deadlines…" class="form-input"></textarea>
+              <span class="field-error">Please describe your challenge.</span>
+            </div>
+            <div class="field">
+              <label class="form-label" for="w-goal">What does a successful outcome look like?</label>
+              <textarea id="w-goal" name="goal" required placeholder="Launched, converting, outperforming the old site — tell us what winning looks like…" class="form-input"></textarea>
+              <span class="field-error">Please describe your goal.</span>
+            </div>
+            <div class="consent-row">
+              <input type="checkbox" id="w-consent" name="consent" />
+              <label for="w-consent">I agree to the <a href="/terms-of-use">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>, and consent to being contacted by SQUARGRAPH™ Studios regarding this enquiry.</label>
+            </div>
+            <span class="field-error" id="web-consent-err" style="margin-top:-6px;">Please accept the terms to continue.</span>
+            <div id="web-captcha-wrap" style="margin-top:4px;">
+              <div class="g-recaptcha" data-sitekey="6LdWRRYtAAAAAOC7lw8efP1OOmh17sYpkLBZ4YvB" style="transform:scale(0.85);transform-origin:left top;"></div>
+              <p id="web-captcha-error" style="font-size:11px;color:#EF4444;display:none;margin-top:6px;">Please complete the captcha.</p>
+            </div>
+            <button type="submit" class="submit-btn" id="web-submit">Submit Your Brief →</button>
+            <p style="font-size:11px;color:var(--textmuted);text-align:center;line-height:1.6;">We respond within 48 hours with a proposed scope. No pitch decks.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-grid">
+      <div class="trust-card scroll-reveal">
+        <div class="trust-num">4–6</div>
+        <div class="trust-label">Weeks to a live, polished site</div>
+        <div class="trust-desc">From brief to browser. We work fast without cutting corners — strategy, design, and development handled by one team.</div>
+      </div>
+      <div class="trust-card scroll-reveal">
+        <div class="trust-num">1</div>
+        <div class="trust-label">Team. No handoffs.</div>
+        <div class="trust-desc">The team that defines your brand positioning is the same team that builds your site. One intelligence framework. No briefing chains between strategy and execution.</div>
+      </div>
+      <div class="trust-card scroll-reveal">
+        <div class="trust-num">∞</div>
+        <div class="trust-label">Built to perform, not just look good</div>
+        <div class="trust-desc">Speed, SEO structure, mobile experience, and conversion logic are built in from day one — not bolted on at the end.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU GET ── -->
+<section class="wyg-section">
+  <div class="wyg-inner">
+    <div class="wyg-header scroll-reveal">
+      <span class="section-eyebrow">Deliverables</span>
+      <h2 class="section-h2">What's included in every project</h2>
+    </div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name">Strategy &amp; Information Architecture</div>
+          <div class="deliverable-desc">Site structure, user journey mapping, and conversion logic planned before a single pixel is designed.</div>
+        </div>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name">UI Design &amp; Prototype</div>
+          <div class="deliverable-desc">Full desktop and mobile design with interactive prototype for review before development begins.</div>
+        </div>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name">Development &amp; CMS Integration</div>
+          <div class="deliverable-desc">Clean, fast, SEO-structured code with a CMS your team can actually update without a developer in the room.</div>
+        </div>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name">SEO Foundation</div>
+          <div class="deliverable-desc">Technical SEO structure, metadata, schema, and Core Web Vitals optimised at build — not added later.</div>
+        </div>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name">QA, Launch &amp; Handoff</div>
+          <div class="deliverable-desc">Full cross-browser and device testing, managed launch, and a handoff session so your team can run it independently.</div>
+        </div>
+      </div>
+      <div class="deliverable-card scroll-reveal" style="background:var(--accentlight);border:1px solid rgba(107,93,184,.15);">
+        <div class="deliverable-icon" style="background:#fff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <div class="deliverable-name" style="color:var(--accent);">Strategy and design in one team.</div>
+          <div class="deliverable-desc" style="color:var(--accent);opacity:.8;">No disconnect between what the brand needs to say and how the site is built to say it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════
+     FOOTER
+══════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+  <img src="/logo.webp" alt="SQUARGRAPH Studios" width="120" height="28" style="height:28px;width:auto;" decoding="async" loading="lazy" />
+</div>
+      <p class="footer-tagline">Brand strategy, campaign architecture, and digital experiences for businesses that take their market position seriously.</p>
+      <p class="footer-philosophy">
+  Perception shapes value.<br/>We build what controls it.
+</p>
+      <div class="social-links">
+        <a href="https://facebook.com/squargraphstudios" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="FB / Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://instagram.com/squargraph" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/squargraph" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/squargraph" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X / Twitter">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://youtube.com/@squargraph" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YT / YouTube">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <span class="footer-col-label">Company</span>
+      <a href="/#intelligence" class="footer-link">Brand Studies</a>
+      <a href="/#approach" class="footer-link">Our Approach</a>
+    </div>
+    <div>
+      <span class="footer-col-label">Engagements</span>
+      <a href="/#capabilities" class="footer-link">Campaign Systems</a>
+      <a href="/#capabilities" class="footer-link">Brand Communication</a>
+      <a href="/#capabilities" class="footer-link">Social Platforms</a>
+      <a href="/#capabilities" class="footer-link">CGI &amp; Motion</a>
+    </div>
+  </div>
+  <div class="footer-bar" style="flex-direction:column;align-items:flex-start;gap:16px;">
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;">
+  <a href="https://razorpay.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:6px;text-decoration:none;">
+  <span style="font-size:11px;color:var(--textmuted);">Payments Secured by</span>
+  <img src="https://cdn.razorpay.com/logo.svg" alt="Razorpay" height="16" width="80" loading="lazy" decoding="async" style="display:block;" />
+</a>
+</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;gap:12px;align-items:center;">
+      <p style="font-size:12px;color:var(--textmuted);">© 2026 SQUARGRAPH™ Studios. All rights reserved. New Delhi, India</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <a href="/terms-of-use" style="font-size:11px;color:var(--textmuted);transition:color .2s;" onmouseenter="this.style.color='var(--accent)'" onmouseleave="this.style.color='var(--textmuted)'">Terms of Use</a>
+        <a href="/privacy-policy" style="font-size:11px;color:var(--textmuted);transition:color .2s;" onmouseenter="this.style.color='var(--accent)'" onmouseleave="this.style.color='var(--textmuted)'">Privacy Policy</a>
+        <a href="/refund-policy" style="font-size:11px;color:var(--textmuted);transition:color .2s;" onmouseenter="this.style.color='var(--accent)'" onmouseleave="this.style.color='var(--textmuted)'">Refund Policy</a>
+        <a href="/ai-disclosure" style="font-size:11px;color:var(--textmuted);transition:color .2s;" onmouseenter="this.style.color='var(--accent)'" onmouseleave="this.style.color='var(--textmuted)'">AI Disclosure</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SUBMISSION SUCCESS OVERLAY ── -->
+<div id="web-success-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(26,23,20,.97);overflow-y:auto;padding:60px 5vw;align-items:center;justify-content:center;">
+  <div class="success-inner">
+    <div class="success-check">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1fad4e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p class="success-eyebrow">Brief Received</p>
+    <h2 class="success-h2">We've got<br/>your brief</h2>
+    <p class="success-sub">We'll review it and come back within <strong style="color:rgba(245,243,240,.85);">48 hours</strong> with a clear proposed scope — no deck, no runaround.</p>
+    <div class="success-steps-card">
+      <p class="success-steps-label">What happens next</p>
+      <div class="success-steps">
+        <div class="success-step"><div class="step-num">1</div><div><div class="step-title">Brief Review</div><div class="step-desc">Saurabh reviews your submission personally and maps it against our delivery framework.</div></div></div>
+        <div class="success-step"><div class="step-num">2</div><div><div class="step-title">Proposed Scope</div><div class="step-desc">We send a clear scope document — what's included, timeline, and what the output looks like.</div></div></div>
+        <div class="success-step"><div class="step-num">3</div><div><div class="step-title">Kickoff &amp; Build</div><div class="step-desc">Once aligned, we start within 5 business days. Strategy, design, and development as one joined-up team.</div></div></div>
+      </div>
+    </div>
+    <div class="success-actions">
+      <a href="https://wa.me/918588897488?text=Hi%20SQUARGRAPH%2C%20I%20just%20submitted%20a%20website%20brief." target="_blank" rel="noopener noreferrer" class="btn-wa">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Say hi on WhatsApp
+      </a>
+      <button type="button" class="btn-close-overlay" onclick="document.getElementById('web-success-overlay').style.display='none';document.body.style.overflow='';">Back to site</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/otp.js"></script>
+<!-- ── SUPABASE CONFIG ── -->
+<script>
+  window.__sbUrl = 'https://jzlupkvgizfdwwbofzmu.supabase.co';
+  window.__sbKey = 'sb_publishable_IPU4Nh7zQW_OfZr0Tlej6A_gfYhevRl';
+  window.__sb = {
+    from: function(table) {
+      return {
+        insert: async function(rows) {
+          const res = await fetch(window.__sbUrl + '/rest/v1/' + table, {
+            method: 'POST',
+            headers: {
+              'apikey': window.__sbKey,
+              'Authorization': 'Bearer ' + window.__sbKey,
+              'Content-Type': 'application/json',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify(rows)
+          });
+          if (!res.ok) throw new Error('Insert failed: ' + res.status);
+          return { error: null };
+        }
+      };
+    }
+  };
+</script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Nav scroll ── */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
+
+  /* ── Mobile menu ── */
+  var mobToggle = document.getElementById('mob-toggle');
+  var mobMenu = document.getElementById('mob-menu');
+  var menuOpen = false;
+  mobMenu.addEventListener('touchstart', function(){}, {passive: true});
+  mobToggle.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    mobToggle.classList.toggle('open', menuOpen);
+    mobToggle.setAttribute('aria-expanded', String(menuOpen));
+    mobToggle.setAttribute('aria-label', menuOpen ? 'Close navigation menu' : 'Open navigation menu');
+    mobMenu.classList.toggle('open', menuOpen);
+    if (menuOpen) { mobMenu.removeAttribute('inert'); } else { mobMenu.setAttribute('inert', ''); }
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+  });
+  window.closeMob = function() {
+      menuOpen = false;
+      mobToggle.classList.remove('open');
+      mobToggle.setAttribute('aria-expanded', 'false');
+      mobToggle.setAttribute('aria-label', 'Open navigation menu');
+      mobMenu.classList.remove('open');
+      mobMenu.setAttribute('inert', '');
+      document.body.style.overflow = '';
+    };
+    mobMenu.addEventListener('touchmove', function(e) {
+      var touch = e.touches[0];
+      var el = document.elementFromPoint(touch.clientX, touch.clientY);
+      mobMenu.querySelectorAll('a').forEach(function(a){ a.classList.remove('finger-active'); });
+      if (el && el.tagName === 'A' && mobMenu.contains(el)) {
+        el.classList.add('finger-active');
+      }
+    }, { passive: true });
+    mobMenu.addEventListener('touchend', function() {
+      mobMenu.querySelectorAll('a').forEach(function(a){ a.classList.remove('finger-active'); });
+    }, { passive: true });
+    document.addEventListener('click', function(e) {
+      if (menuOpen && !mobMenu.contains(e.target) && !mobToggle.contains(e.target)) {
+        closeMob();
+      }
+    });
+
+  /* ── Scroll reveal ── */
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold:.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el){ obs.observe(el); });
+
+  /* ── City data ── */
+  var CITY_DATA = {
+    'India':['Ahmedabad','Bengaluru','Chennai','Delhi','Gurugram','Hyderabad','Jaipur','Kolkata','Mumbai','Noida','Pune','Surat','Other'],
+    'UAE':['Abu Dhabi','Dubai','Sharjah','Other'],
+    'USA':['Austin','Chicago','Los Angeles','Miami','New York','San Francisco','Seattle','Other'],
+    'UK':['Birmingham','Edinburgh','Leeds','London','Manchester','Other'],
+    'Singapore':['Singapore'],
+    'Australia':['Brisbane','Melbourne','Perth','Sydney','Other'],
+    'Canada':['Calgary','Montreal','Toronto','Vancouver','Other'],
+    'Germany':['Berlin','Frankfurt','Hamburg','Munich','Other'],
+    'France':['Lyon','Marseille','Paris','Other'],
+    'Japan':['Osaka','Tokyo','Other']
+  };
+  function initCountryCityMapping(countryId, cityId){
+    var countryEl = document.getElementById(countryId);
+    var cityEl = document.getElementById(cityId);
+    var textEl = document.getElementById(cityId + '-text');
+    if(!countryEl || !cityEl) return;
+    countryEl.addEventListener('change', function(){
+      var country = this.value;
+      var cities = CITY_DATA[country] || [];
+      cityEl.innerHTML = '';
+      if(!country || !cities.length){ cityEl.style.display='none'; if(textEl){ textEl.style.display='block'; textEl.value=''; } return; }
+      var ph = document.createElement('option'); ph.value=''; ph.disabled=true; ph.selected=true; ph.textContent='Select city'; cityEl.appendChild(ph);
+      cities.forEach(function(c){ var o=document.createElement('option'); o.value=c; o.textContent=c; cityEl.appendChild(o); });
+      cityEl.style.display='block'; if(textEl){ textEl.style.display='none'; textEl.value=''; }
+    });
+    if(cityEl){ cityEl.addEventListener('change', function(){
+      if(!textEl) return;
+      if(this.value==='Other'){ textEl.style.display='block'; textEl.focus(); } else { textEl.style.display='none'; textEl.value=''; }
+    }); }
+  }
+
+  /* ── ITI init ── */
+  var webIti = null;
+  function initITI(){
+    if(typeof window.intlTelInput !== 'function') return setTimeout(initITI, 100);
+    var input = document.getElementById('web-phone');
+    if(!input) return;
+    webIti = window.intlTelInput(input, {
+      initialCountry: 'in',
+      separateDialCode: true,
+      preferredCountries: ['in','ae','us','gb','sg'],
+      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18/build/js/utils.js'
+    });
+    window.iti = webIti;
+    /* OTP auto-triggered on submit — no manual verify button needed */
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initCountryCityMapping('web-country', 'web-city');
+    initITI();
+    var rc = document.querySelector('#web-captcha-wrap .g-recaptcha');
+    if(rc) _rcObs.observe(rc);
+  });
+
+  /* ── Form validation ── */
+  function getVal(id){ return (document.getElementById(id)||{}).value || ''; }
+  function showErr(input, show){
+    input.classList.toggle('has-error', show);
+    var err = input.closest('.field') && input.closest('.field').querySelector('.field-error');
+    if(err) err.classList.toggle('show', show);
+  }
+  function validateWeb(){
+    var valid = true;
+    var fields = [
+      { id:'w-name', check: function(v){ return v.trim().length > 0; } },
+      { id:'w-email', check: function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); } },
+      { id:'w-company', check: function(v){ return v.trim().length > 0; } },
+      { id:'w-challenge', check: function(v){ return v.trim().length > 0; } },
+      { id:'w-goal', check: function(v){ return v.trim().length > 0; } }
+    ];
+    fields.forEach(function(f){
+      var el = document.getElementById(f.id);
+      if(!el) return;
+      var ok = f.check(el.value);
+      showErr(el, !ok);
+      if(!ok) valid = false;
+    });
+    var phoneInput = document.getElementById('web-phone');
+    var phoneOk = phoneInput && phoneInput.value.trim().length > 0 && (!webIti || webIti.isValidNumber());
+    if(phoneInput){ phoneInput.classList.toggle('has-error', !phoneOk); }
+    var phoneErr = document.getElementById('web-phone-err');
+    if(phoneErr){ phoneErr.classList.toggle('show', !phoneOk); }
+    if(!phoneOk) valid = false;
+    var consent = document.getElementById('w-consent');
+    var consentOk = consent && consent.checked;
+    var consentErr = document.getElementById('web-consent-err');
+    if(consentErr){ consentErr.classList.toggle('show', !consentOk); }
+    if(!consentOk) valid = false;
+    return valid;
+  }
+
+  /* ── Submit ── */
+  var form = document.getElementById('web-form');
+  var submitBtn = document.getElementById('web-submit');
+  if(form){
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(!validateWeb()) return;
+      var emailVal = document.getElementById('w-email').value.trim();
+      if (emailVal && window.SQOtp && !window.SQOtp.isEmailVerified()) {
+        window.SQOtp.verifyEmail(emailVal);
+        return;
+      }
+      var captchaVal = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : '';
+      if(!captchaVal){ document.getElementById('web-captcha-error').style.display='block'; return; }
+      document.getElementById('web-captcha-error').style.display='none';
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner"></span>&nbsp;Submitting brief…';
+      var cityEl = document.getElementById('web-city');
+      var cityTextEl = document.getElementById('web-city-text');
+      var cityVal = (cityEl && cityEl.style.display !== 'none') ? cityEl.value : (cityTextEl ? cityTextEl.value : '');
+      var payload = {
+        name: getVal('w-name'),
+        phone: webIti ? webIti.getNumber() : getVal('web-phone'),
+        email: getVal('w-email'),
+        company: getVal('w-company'),
+        country: getVal('web-country'),
+        city: cityVal,
+        challenge: getVal('w-challenge'),
+        goal: getVal('w-goal'),
+        service: 'Websites & Digital Experiences',
+        status: 'new',
+        source_url: window.location.href,
+        created_at: new Date().toISOString(),
+        message: (getVal('w-challenge') + '\n\nGoal: ' + getVal('w-goal')).trim()
+      };
+      try {
+        if(!window.__sb) throw new Error('Supabase not ready');
+        await window.__sb.from('leads').insert([payload]);
+        var overlay = document.getElementById('web-success-overlay');
+        if(overlay){ overlay.style.display='flex'; document.body.style.overflow='hidden'; overlay.scrollTop=0; }
+        submitBtn.innerHTML = '✓ Brief submitted';
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event:'web_brief_submitted' });
+      } catch(err){
+        console.error('[SQUARGRAPH] Error:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Error — try again';
+        submitBtn.style.background = '#EF4444';
+        setTimeout(function(){ submitBtn.innerHTML='Submit Your Brief →'; submitBtn.style.background=''; }, 4000);
+      }
+    });
+    form.querySelectorAll('.form-input').forEach(function(el){
+      el.addEventListener('input', function(){ el.classList.remove('has-error'); var err=el.closest('.field')&&el.closest('.field').querySelector('.field-error'); if(err) err.classList.remove('show'); });
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){
+      var overlay = document.getElementById('web-success-overlay');
+      if(overlay && overlay.style.display!=='none'){ overlay.style.display='none'; document.body.style.overflow=''; }
+    }
+  });
+})();
+</script>
+</body>
+</html>
